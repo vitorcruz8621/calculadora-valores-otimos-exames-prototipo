@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desnutrição Proteica - Valores Ótimos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../configs/styles/global.css" />
+  </head>
+  <body class="bg-light">
+    <div class="menu">
+      <a href="../../index.html" class="btn btn-secondary mb-4"
+        >Voltar à Página Principal</a
+      >
+    </div>
+    <div class="container py-4">
+      <h2 class="text-center mb-4">Análise de Desnutrição Proteica</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">Inserir Valores</div>
+            <div class="card-body">
+              <form id="desnutricaoForm">
+                <div class="mb-3">
+                  <label class="form-label">Sexo do Paciente</label>
+                  <select class="form-select" name="sexo" required>
+                    <option value="homens">Masculino</option>
+                    <option value="mulheres">Feminino</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"
+                    >Hemoglobina (H: 13.8-17.2 | M: 12.1-15.1 g/dL)</label
+                  >
+                  <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    name="hemoglobina"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"
+                    >Hematócrito (H: 40-54 | M: 36-48%)</label
+                  >
+                  <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    name="hematocrito"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"
+                    >Proteínas Totais (6.4-8.3 g/dL)</label
+                  >
+                  <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    name="proteinasTotais"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"
+                    >Albumina Sérica (3.5-5.0 g/dL)</label
+                  >
+                  <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    name="albuminaSerica"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"
+                    >RBP - Proteína Ligadora de Retinol (2.6-7.6 mg/dL)</label
+                  >
+                  <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    name="rbp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label"
+                    >Índice de Creatinina (H: 0.7-1.3 | M: 0.6-1.1 mg/dL)</label
+                  >
+                  <input
+                    type="number"
+                    step="0.01"
+                    class="form-control"
+                    name="indiceCreatinina"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Proteinúria (< 150 mg/dia)</label>
+                  <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    name="proteinuria"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Analisar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">Resultados</div>
+            <div class="card-body" id="resultados">
+              <!-- Resultados serão inseridos aqui -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./desnutricao-proteica-utils.js"></script>
+    <script>
+      document
+        .getElementById("desnutricaoForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const dados = {};
+          const sexo = formData.get("sexo");
+
+          for (let [key, value] of formData.entries()) {
+            if (value !== "" && key !== "sexo") {
+              dados[key] = parseFloat(value);
+            }
+          }
+
+          const resultados = DesnutricaoProteicaUtils.avaliarDesnutricao(
+            dados,
+            sexo
+          );
+          const resultsDiv = document.getElementById("resultados");
+          resultsDiv.innerHTML = "";
+
+          for (let param in resultados) {
+            const valor = dados[param];
+            const referencia =
+              sexo && DesnutricaoProteicaUtils.referenciaSexo[param]
+                ? DesnutricaoProteicaUtils.referenciaSexo[param][sexo]
+                : DesnutricaoProteicaUtils.referencia[param];
+
+            resultsDiv.innerHTML += `
+              <div class="result-box ${resultados[param]}">
+                <strong>${param}:</strong> ${valor} 
+                <span class="badge bg-secondary">
+                  Referência: ${referencia.min} - ${referencia.max}
+                </span>
+                <span class="badge bg-info text-dark">
+                  Status: ${resultados[param]}
+                </span>
+              </div>
+            `;
+          }
+        });
+    </script>
+    <script src="../../neutralino.js"></script>
+  </body>
+</html>

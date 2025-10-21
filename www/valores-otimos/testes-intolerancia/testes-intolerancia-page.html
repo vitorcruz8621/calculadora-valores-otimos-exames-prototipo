@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testes de Intolerância</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h2 class="mb-4">Testes de Intolerância</h2>
+
+      <form id="intoleranciasForm">
+        <div class="row g-3">
+          <!-- Teste de Lactose -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h5>Teste de Hidrogênio Exalado (Lactose)</h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="lactose" class="form-label">Valor (ppm)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="lactose"
+                    step="0.01"
+                  />
+                  <div class="form-text">Valor de referência: 20-25 ppm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gliadina -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h5>Anticorpos Anti-Gliadina</h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="gliadina" class="form-label">Valor (U/mL)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="gliadina"
+                    step="0.01"
+                  />
+                  <div class="form-text">Valor de referência: < 20 U/mL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Endomísio -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h5>Anticorpos Anti-Endomísio</h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <select class="form-select" id="endomisio">
+                    <option value="">Selecione o resultado</option>
+                    <option value="negativo">Negativo</option>
+                    <option value="positivo">Positivo</option>
+                  </select>
+                  <div class="form-text">
+                    Valor de referência: Negativo < 1:10
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transglutaminase -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h5>Anticorpos Anti-Transglutaminase</h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="transglutaminaseIgA" class="form-label"
+                    >IgA (U/mL)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="transglutaminaseIgA"
+                    step="0.01"
+                  />
+                  <div class="form-text">Valor de referência: < 4 U/mL</div>
+                </div>
+                <div class="mb-3">
+                  <label for="transglutaminaseIgG" class="form-label"
+                    >IgG (U/mL)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="transglutaminaseIgG"
+                    step="0.01"
+                  />
+                  <div class="form-text">Valor de referência: < 6 U/mL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col">
+            <button type="submit" class="btn btn-primary">
+              Avaliar Resultados
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Resultados -->
+      <div class="mt-4" id="resultados" style="display: none">
+        <h3>Resultados</h3>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Teste</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody id="resultadosTabela"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="testes-intolerancia-utils.js"></script>
+    <script>
+      document
+        .getElementById("intoleranciasForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const dados = {
+            lactose:
+              parseFloat(document.getElementById("lactose").value) || undefined,
+            gliadina:
+              parseFloat(document.getElementById("gliadina").value) ||
+              undefined,
+            endomisio: document.getElementById("endomisio").value || undefined,
+            transglutaminase: {
+              IgA:
+                parseFloat(
+                  document.getElementById("transglutaminaseIgA").value
+                ) || undefined,
+              IgG:
+                parseFloat(
+                  document.getElementById("transglutaminaseIgG").value
+                ) || undefined,
+            },
+          };
+
+          const resultados = TestesIntoleranciaUtils.avaliarIntolerancia(dados);
+          mostrarResultados(resultados);
+        });
+
+      function mostrarResultados(resultados) {
+        const tbody = document.getElementById("resultadosTabela");
+        tbody.innerHTML = "";
+
+        if (resultados.lactose) {
+          tbody.innerHTML += `<tr><td>Teste de Lactose</td><td>${resultados.lactose}</td></tr>`;
+        }
+        if (resultados.gliadina) {
+          tbody.innerHTML += `<tr><td>Anti-Gliadina</td><td>${resultados.gliadina}</td></tr>`;
+        }
+        if (resultados.endomisio) {
+          tbody.innerHTML += `<tr><td>Anti-Endomísio</td><td>${resultados.endomisio}</td></tr>`;
+        }
+        if (resultados.transglutaminase) {
+          if (resultados.transglutaminase.IgA) {
+            tbody.innerHTML += `<tr><td>Anti-Transglutaminase IgA</td><td>${resultados.transglutaminase.IgA}</td></tr>`;
+          }
+          if (resultados.transglutaminase.IgG) {
+            tbody.innerHTML += `<tr><td>Anti-Transglutaminase IgG</td><td>${resultados.transglutaminase.IgG}</td></tr>`;
+          }
+        }
+
+        document.getElementById("resultados").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
