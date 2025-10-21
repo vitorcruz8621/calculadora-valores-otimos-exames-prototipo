@@ -11,16 +11,16 @@
   ],
   "modes": {
     "window": {
-      "title": "myapp-neutralinojs-react",
-      "width": 800,
-      "height": 500,
-      "minWidth": 400,
-      "minHeight": 200,
+      "title": "calculadora-valores-otimos",
+      "width": 900,
+      "height": 700,
+      "minWidth": 700,
+      "minHeight": 500,
       "icon": "/www/icon.png"
     }
   },
   "cli": {
-    "binaryName": "myapp-neutralinojs-react",
+    "binaryName": "calculadora-valores-otimos",
     "resourcesPath": "/www/",
     "extensionsPath": "/extensions/",
     "clientLibrary": "/www/neutralino.js",
