@@ -18,8 +18,23 @@ body {
 	transition: all 0.3s;
 }
 
+.sidebar .nav-link.active {
+	background-color: #0d6efd;
+	color: white;
+}
+
+/* --------------- */
+.sidebar .nav-item:focus-within {
+	background-color: var(--bs-warning);
+	transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-item:focus-within .nav-link {
+	color: var(--bs-dark) !important;
+}
+
 .sidebar .nav-link:hover {
-	background-color: #e9ecef;
+	background-color: #6753cf;
 	padding-left: 25px;
 }
 
