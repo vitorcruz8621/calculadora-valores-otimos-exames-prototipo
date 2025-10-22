@@ -1,186 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biomarcadores Renais - Análise</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../configs/styles/global.css">
-  </head>
-  <body class="bg-light">
-    <div class="menu">
-      <a href="../../index.html" class="btn btn-secondary mb-4"
-        >Voltar à Página Principal</a
-      >
-    </div>
-    <div class="container py-4">
-      <h2 class="text-center mb-4">Análise de Biomarcadores Renais</h2>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Biomarcadores Renais - Análise</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../configs/styles/global.css" />
+	</head>
+	<body class="bg-light">
+		<div class="menu">
+			<a href="../../index.html" class="btn btn-secondary mb-4">Voltar à Página Principal</a>
+		</div>
+		<div class="container py-4">
+			<h2 class="text-center mb-4">Análise de Biomarcadores Renais</h2>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <div class="card-header">Inserir Valores</div>
-            <div class="card-body">
-              <form id="biomarcadoresForm">
-                <div class="mb-3">
-                  <label class="form-label">Ureia (15-45 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="ureia"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Creatinina (0,6-1,3 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="creatinina"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Sódio (135-145 mEq/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="sodio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Potássio (3,5-5,0 mEq/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="potassio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label"
-                    >Cálcio Total (8,5-10,2 mg/dL)</label
-                  >
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="calcioTotal"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label"
-                    >Cálcio Iônico (4,4-5,4 mg/dL)</label
-                  >
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="calcioIonico"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Fósforo (2,5-4,5 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="fosforo"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Magnésio (1,7-2,2 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="magnesio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Ácido Úrico (3,5-7,2 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="acidoUrico"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Citrato (320-1240 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="1"
-                    class="form-control"
-                    name="citrato"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Oxalato (< 45 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="1"
-                    class="form-control"
-                    name="oxalato"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label"
-                    >Proteína Urinária (< 150 mg/dia)</label
-                  >
-                  <input
-                    type="number"
-                    step="1"
-                    class="form-control"
-                    name="proteinaUrinaria"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Analisar</button>
-              </form>
-            </div>
-          </div>
-        </div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card mb-4">
+						<div class="card-header">Inserir Valores</div>
+						<div class="card-body">
+							<form id="biomarcadoresForm">
+								<div class="mb-3">
+									<label class="form-label">Ureia (15-45 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="ureia" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Creatinina (0,6-1,3 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="creatinina" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Sódio (135-145 mEq/L)</label>
+									<input type="number" step="0.1" class="form-control" name="sodio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Potássio (3,5-5,0 mEq/L)</label>
+									<input type="number" step="0.1" class="form-control" name="potassio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Cálcio Total (8,5-10,2 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="calcioTotal" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Cálcio Iônico (4,4-5,4 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="calcioIonico" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Fósforo (2,5-4,5 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="fosforo" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Magnésio (1,7-2,2 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="magnesio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Ácido Úrico (3,5-7,2 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="acidoUrico" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Citrato (320-1240 mg/dL)</label>
+									<input type="number" step="1" class="form-control" name="citrato" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Oxalato (< 45 mg/dL)</label>
+									<input type="number" step="1" class="form-control" name="oxalato" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Proteína Urinária (< 150 mg/dia)</label>
+									<input type="number" step="1" class="form-control" name="proteinaUrinaria" />
+								</div>
+								<button type="submit" class="btn btn-primary">Analisar</button>
+							</form>
+						</div>
+					</div>
+				</div>
 
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">Resultados</div>
-            <div class="card-body" id="resultados">
-              <!-- Resultados serão inseridos aqui -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">Resultados</div>
+						<div class="card-body" id="resultados">
+							<!-- Resultados serão inseridos aqui -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script src="./biomarcadores-renais-utils.js"></script>
-    <script>
-      document
-        .getElementById("biomarcadoresForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+		<script src="./biomarcadores-renais-utils.js"></script>
+		<script>
+			document.getElementById("biomarcadoresForm").addEventListener("submit", function (e) {
+				e.preventDefault();
 
-          const formData = new FormData(this);
-          const dados = {};
+				const formData = new FormData(this);
+				const dados = {};
 
-          for (let [key, value] of formData.entries()) {
-            if (value !== "") {
-              dados[key] = parseFloat(value);
-            }
-          }
+				for (let [key, value] of formData.entries()) {
+					if (value !== "") {
+						dados[key] = parseFloat(value);
+					}
+				}
 
-          const resultados = BiomarcadoresRenaisUtils.avaliarRenais(dados);
-          const resultsDiv = document.getElementById("resultados");
-          resultsDiv.innerHTML = "";
+				const resultados = BiomarcadoresRenaisUtils.avaliarRenais(dados);
+				const resultsDiv = document.getElementById("resultados");
+				resultsDiv.innerHTML = "";
 
-          for (let param in resultados) {
-            const valor = dados[param];
-            const referencia = BiomarcadoresRenaisUtils.referencia[param];
+				for (let param in resultados) {
+					const valor = dados[param];
+					const referencia = BiomarcadoresRenaisUtils.referencia[param];
 
-            resultsDiv.innerHTML += `
+					resultsDiv.innerHTML += `
                     <div class="result-box ${resultados[param]}">
                         <strong>${param}:</strong> ${valor} 
                         <span class="badge bg-secondary">
@@ -191,9 +118,9 @@
                         </span>
                     </div>
                 `;
-          }
-        });
-    </script>
-    <script src="../../neutralino.js"></script>
-  </body>
+				}
+			});
+		</script>
+		<script src="../../neutralino.js"></script>
+	</body>
 </html>

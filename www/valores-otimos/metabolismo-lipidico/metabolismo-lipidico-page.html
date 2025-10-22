@@ -1,139 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Metabolismo Lipídico - Valores Ótimos</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../configs/styles/global.css" />
-  </head>
-  <body class="bg-light">
-    <div class="menu">
-      <a href="../../index.html" class="btn btn-secondary mb-4"
-        >Voltar à Página Principal</a
-      >
-    </div>
-    <div class="container py-4">
-      <h2 class="text-center mb-4">Análise do Metabolismo Lipídico</h2>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Metabolismo Lipídico - Valores Ótimos</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../configs/styles/global.css" />
+	</head>
+	<body class="bg-light">
+		<div class="menu">
+			<a href="../../index.html" class="btn btn-secondary mb-4">Voltar à Página Principal</a>
+		</div>
+		<div class="container py-4">
+			<h2 class="text-center mb-4">Análise do Metabolismo Lipídico</h2>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <div class="card-header">Inserir Valores</div>
-            <div class="card-body">
-              <form id="lipidicoForm">
-                <div class="mb-3">
-                  <label class="form-label">Sexo do Paciente</label>
-                  <select class="form-select" name="sexo" required>
-                    <option value="homens">Masculino</option>
-                    <option value="mulheres">Feminino</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Triglicérides (< 100 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="triglicerides" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Colesterol Total (< 200 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="colesterolTotal" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">HDL (> 60 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="hdl" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">LDL (< 100 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="ldl" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">VLDL (< 30 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="vldl" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Homocisteína (< 10 µmol/L)</label>
-                  <input type="number" step="0.1" class="form-control" name="homocisteina" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">PCR-us (< 1 mg/L)</label>
-                  <input type="number" step="0.01" class="form-control" name="pcrUs" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">ApoA (H: >120 | M: >140 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="apoA" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">ApoB (< 90 mg/dL)</label>
-                  <input type="number" step="0.1" class="form-control" name="apoB" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Índice de Castelli I (H: <4.5 | M: <3.5)</label>
-                  <input type="number" step="0.1" class="form-control" name="indiceCastelliI" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Índice de Castelli II (< 2.5)</label>
-                  <input type="number" step="0.1" class="form-control" name="indiceCastelliII" />
-                </div>
-                <button type="submit" class="btn btn-primary">Analisar</button>
-              </form>
-            </div>
-          </div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card mb-4">
+						<div class="card-header">Inserir Valores</div>
+						<div class="card-body">
+							<form id="lipidicoForm">
+								<div class="mb-3">
+									<label class="form-label">Sexo do Paciente</label>
+									<select class="form-select" name="sexo" required>
+										<option value="homens">Masculino</option>
+										<option value="mulheres">Feminino</option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Triglicérides (< 100 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="triglicerides" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Colesterol Total (< 200 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="colesterolTotal" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">HDL (> 60 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="hdl" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">LDL (< 100 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="ldl" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">VLDL (< 30 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="vldl" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Homocisteína (< 10 µmol/L)</label>
+									<input type="number" step="0.1" class="form-control" name="homocisteina" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">PCR-us (< 1 mg/L)</label>
+									<input type="number" step="0.01" class="form-control" name="pcrUs" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">ApoA (H: >120 | M: >140 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="apoA" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">ApoB (< 90 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="apoB" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Índice de Castelli I (H: <4.5 | M: <3.5)</label>
+									<input type="number" step="0.1" class="form-control" name="indiceCastelliI" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Índice de Castelli II (< 2.5)</label>
+									<input type="number" step="0.1" class="form-control" name="indiceCastelliII" />
+								</div>
+								<button type="submit" class="btn btn-primary">Analisar</button>
+							</form>
+						</div>
+					</div>
 
-          <div class="card">
-            <div class="card-header">Informações Importantes</div>
-            <div class="card-body">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">HDL: Colesterol "bom" - quanto maior, melhor</li>
-                <li class="list-group-item">LDL: Principal alvo terapêutico</li>
-                <li class="list-group-item">PCR-us: Marcador inflamatório</li>
-                <li class="list-group-item">Índice de Castelli I = CT/HDL</li>
-                <li class="list-group-item">Índice de Castelli II = LDL/HDL</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Informações Importantes</div>
+						<div class="card-body">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">HDL: Colesterol "bom" - quanto maior, melhor</li>
+								<li class="list-group-item">LDL: Principal alvo terapêutico</li>
+								<li class="list-group-item">PCR-us: Marcador inflamatório</li>
+								<li class="list-group-item">Índice de Castelli I = CT/HDL</li>
+								<li class="list-group-item">Índice de Castelli II = LDL/HDL</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">Resultados</div>
-            <div class="card-body" id="resultados">
-              <!-- Resultados serão inseridos aqui -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">Resultados</div>
+						<div class="card-body" id="resultados">
+							<!-- Resultados serão inseridos aqui -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script src="./metabolismo-lipidico-utils.js"></script>
-    <script>
-      document
-        .getElementById("lipidicoForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+		<script src="./metabolismo-lipidico-utils.js"></script>
+		<script>
+			document.getElementById("lipidicoForm").addEventListener("submit", function (e) {
+				e.preventDefault();
 
-          const formData = new FormData(this);
-          const dados = {};
-          const sexo = formData.get('sexo');
+				const formData = new FormData(this);
+				const dados = {};
+				const sexo = formData.get("sexo");
 
-          for (let [key, value] of formData.entries()) {
-            if (value !== "" && key !== "sexo") {
-              dados[key] = parseFloat(value);
-            }
-          }
+				for (let [key, value] of formData.entries()) {
+					if (value !== "" && key !== "sexo") {
+						dados[key] = parseFloat(value);
+					}
+				}
 
-          const resultados = MetabolismoLipidicoUtils.avaliarMetabolismo(dados, sexo);
-          const resultsDiv = document.getElementById("resultados");
-          resultsDiv.innerHTML = "";
+				const resultados = MetabolismoLipidicoUtils.avaliarMetabolismo(dados, sexo);
+				const resultsDiv = document.getElementById("resultados");
+				resultsDiv.innerHTML = "";
 
-          for (let param in resultados) {
-            const valor = dados[param];
-            const referencia = sexo && MetabolismoLipidicoUtils.referenciasSexo[param] 
-              ? MetabolismoLipidicoUtils.referenciasSexo[param][sexo]
-              : MetabolismoLipidicoUtils.referencia[param];
+				for (let param in resultados) {
+					const valor = dados[param];
+					const referencia =
+						sexo && MetabolismoLipidicoUtils.referenciasSexo[param]
+							? MetabolismoLipidicoUtils.referenciasSexo[param][sexo]
+							: MetabolismoLipidicoUtils.referencia[param];
 
-            resultsDiv.innerHTML += `
+					resultsDiv.innerHTML += `
               <div class="result-box ${resultados[param]}">
                 <strong>${param}:</strong> ${valor} 
                 <span class="badge bg-secondary">
@@ -144,9 +138,9 @@
                 </span>
               </div>
             `;
-          }
-        });
-    </script>
-    <script src="../../neutralino.js"></script>
-  </body>
+				}
+			});
+		</script>
+		<script src="../../neutralino.js"></script>
+	</body>
 </html>

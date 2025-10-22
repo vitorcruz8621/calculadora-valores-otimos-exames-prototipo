@@ -1,295 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vitaminograma</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container mt-4">
-      <h2 class="mb-4">Vitaminograma</h2>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vitaminograma</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container mt-4">
+			<h2 class="mb-4">Vitaminograma</h2>
 
-      <form id="vitaminogramaForm">
-        <div class="row g-3">
-          <!-- Vitaminas Hidrossolúveis -->
-          <div class="col-12">
-            <h4>Vitaminas Hidrossolúveis</h4>
-          </div>
+			<form id="vitaminogramaForm">
+				<div class="row g-3">
+					<!-- Vitaminas Hidrossolúveis -->
+					<div class="col-12">
+						<h4>Vitaminas Hidrossolúveis</h4>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaC"
-                step="0.1"
-              />
-              <label>Vitamina C (mg/dL)</label>
-              <div class="form-text">Referência: 0.6 - 2.0</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaC" step="0.1" />
+							<label>Vitamina C (mg/dL)</label>
+							<div class="form-text">Referência: 0.6 - 2.0</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB1"
-                step="1"
-              />
-              <label>Vitamina B1 (nmol/L)</label>
-              <div class="form-text">Referência: 70 - 180</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB1" step="1" />
+							<label>Vitamina B1 (nmol/L)</label>
+							<div class="form-text">Referência: 70 - 180</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB2"
-                step="1"
-              />
-              <label>Vitamina B2 (µg/L)</label>
-              <div class="form-text">Referência: 5 - 50</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB2" step="1" />
+							<label>Vitamina B2 (µg/L)</label>
+							<div class="form-text">Referência: 5 - 50</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB3"
-                step="0.1"
-              />
-              <label>Vitamina B3 (µg/mL)</label>
-              <div class="form-text">Referência: 0.5 - 8.0</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB3" step="0.1" />
+							<label>Vitamina B3 (µg/mL)</label>
+							<div class="form-text">Referência: 0.5 - 8.0</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB5"
-                step="0.1"
-              />
-              <label>Vitamina B5 (µg/mL)</label>
-              <div class="form-text">Referência: 1.0 - 3.0</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB5" step="0.1" />
+							<label>Vitamina B5 (µg/mL)</label>
+							<div class="form-text">Referência: 1.0 - 3.0</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB6"
-                step="1"
-              />
-              <label>Vitamina B6 (ng/mL)</label>
-              <div class="form-text">Referência: 5 - 30</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB6" step="1" />
+							<label>Vitamina B6 (ng/mL)</label>
+							<div class="form-text">Referência: 5 - 30</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB9"
-                step="0.1"
-              />
-              <label>Vitamina B9 (ng/mL)</label>
-              <div class="form-text">Referência: 10 - 20</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB9" step="0.1" />
+							<label>Vitamina B9 (ng/mL)</label>
+							<div class="form-text">Referência: 10 - 20</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaB12"
-                step="1"
-              />
-              <label>Vitamina B12 (pg/mL)</label>
-              <div class="form-text">Referência: 400 - 800</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaB12" step="1" />
+							<label>Vitamina B12 (pg/mL)</label>
+							<div class="form-text">Referência: 400 - 800</div>
+						</div>
+					</div>
 
-          <!-- Vitaminas Lipossolúveis -->
-          <div class="col-12 mt-4">
-            <h4>Vitaminas Lipossolúveis</h4>
-          </div>
+					<!-- Vitaminas Lipossolúveis -->
+					<div class="col-12 mt-4">
+						<h4>Vitaminas Lipossolúveis</h4>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaA"
-                step="0.1"
-              />
-              <label>Vitamina A (µg/dL)</label>
-              <div class="form-text">Referência: 30 - 65</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaA" step="0.1" />
+							<label>Vitamina A (µg/dL)</label>
+							<div class="form-text">Referência: 30 - 65</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaD"
-                step="0.1"
-              />
-              <label>Vitamina D (ng/mL)</label>
-              <div class="form-text">Referência: 40 - 60</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaD" step="0.1" />
+							<label>Vitamina D (ng/mL)</label>
+							<div class="form-text">Referência: 40 - 60</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaE"
-                step="0.1"
-              />
-              <label>Vitamina E (µg/mL)</label>
-              <div class="form-text">Referência: 12 - 25</div>
-            </div>
-          </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaE" step="0.1" />
+							<label>Vitamina E (µg/mL)</label>
+							<div class="form-text">Referência: 12 - 25</div>
+						</div>
+					</div>
 
-          <div class="col-md-4">
-            <div class="form-floating">
-              <input
-                type="number"
-                class="form-control"
-                id="vitaminaK"
-                step="0.1"
-              />
-              <label>Vitamina K (ng/mL)</label>
-              <div class="form-text">Referência: 0.5 - 2.0</div>
-            </div>
-          </div>
-        </div>
+					<div class="col-md-4">
+						<div class="form-floating">
+							<input type="number" class="form-control" id="vitaminaK" step="0.1" />
+							<label>Vitamina K (ng/mL)</label>
+							<div class="form-text">Referência: 0.5 - 2.0</div>
+						</div>
+					</div>
+				</div>
 
-        <div class="row mt-4">
-          <div class="col">
-            <button type="submit" class="btn btn-primary">
-              Avaliar Resultados
-            </button>
-          </div>
-        </div>
-      </form>
+				<div class="row mt-4">
+					<div class="col">
+						<button type="submit" class="btn btn-primary">Avaliar Resultados</button>
+					</div>
+				</div>
+			</form>
 
-      <!-- Resultados -->
-      <div class="mt-4" id="resultados" style="display: none">
-        <h3>Resultados</h3>
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Vitamina</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody id="resultadosTabela"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+			<!-- Resultados -->
+			<div class="mt-4" id="resultados" style="display: none">
+				<h3>Resultados</h3>
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Vitamina</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody id="resultadosTabela"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="vitaminograma-utils.js"></script>
-    <script>
-      document
-        .getElementById("vitaminogramaForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="vitaminograma-utils.js"></script>
+		<script>
+			document.getElementById("vitaminogramaForm").addEventListener("submit", function (e) {
+				e.preventDefault();
 
-          const dados = {
-            vitaminaC:
-              parseFloat(document.getElementById("vitaminaC").value) ||
-              undefined,
-            vitaminaB1:
-              parseFloat(document.getElementById("vitaminaB1").value) ||
-              undefined,
-            vitaminaB2:
-              parseFloat(document.getElementById("vitaminaB2").value) ||
-              undefined,
-            vitaminaB3:
-              parseFloat(document.getElementById("vitaminaB3").value) ||
-              undefined,
-            vitaminaB5:
-              parseFloat(document.getElementById("vitaminaB5").value) ||
-              undefined,
-            vitaminaB6:
-              parseFloat(document.getElementById("vitaminaB6").value) ||
-              undefined,
-            vitaminaB9:
-              parseFloat(document.getElementById("vitaminaB9").value) ||
-              undefined,
-            vitaminaB12:
-              parseFloat(document.getElementById("vitaminaB12").value) ||
-              undefined,
-            vitaminaA:
-              parseFloat(document.getElementById("vitaminaA").value) ||
-              undefined,
-            vitaminaD:
-              parseFloat(document.getElementById("vitaminaD").value) ||
-              undefined,
-            vitaminaE:
-              parseFloat(document.getElementById("vitaminaE").value) ||
-              undefined,
-            vitaminaK:
-              parseFloat(document.getElementById("vitaminaK").value) ||
-              undefined,
-          };
+				const dados = {
+					vitaminaC: parseFloat(document.getElementById("vitaminaC").value) || undefined,
+					vitaminaB1: parseFloat(document.getElementById("vitaminaB1").value) || undefined,
+					vitaminaB2: parseFloat(document.getElementById("vitaminaB2").value) || undefined,
+					vitaminaB3: parseFloat(document.getElementById("vitaminaB3").value) || undefined,
+					vitaminaB5: parseFloat(document.getElementById("vitaminaB5").value) || undefined,
+					vitaminaB6: parseFloat(document.getElementById("vitaminaB6").value) || undefined,
+					vitaminaB9: parseFloat(document.getElementById("vitaminaB9").value) || undefined,
+					vitaminaB12: parseFloat(document.getElementById("vitaminaB12").value) || undefined,
+					vitaminaA: parseFloat(document.getElementById("vitaminaA").value) || undefined,
+					vitaminaD: parseFloat(document.getElementById("vitaminaD").value) || undefined,
+					vitaminaE: parseFloat(document.getElementById("vitaminaE").value) || undefined,
+					vitaminaK: parseFloat(document.getElementById("vitaminaK").value) || undefined,
+				};
 
-          const resultados = VitaminogramaUtils.avaliarVitaminograma(dados);
-          mostrarResultados(resultados);
-        });
+				const resultados = VitaminogramaUtils.avaliarVitaminograma(dados);
+				mostrarResultados(resultados);
+			});
 
-      function mostrarResultados(resultados) {
-        const tbody = document.getElementById("resultadosTabela");
-        tbody.innerHTML = "";
+			function mostrarResultados(resultados) {
+				const tbody = document.getElementById("resultadosTabela");
+				tbody.innerHTML = "";
 
-        const nomes = {
-          vitaminaC: "Vitamina C",
-          vitaminaB1: "Vitamina B1",
-          vitaminaB2: "Vitamina B2",
-          vitaminaB3: "Vitamina B3",
-          vitaminaB5: "Vitamina B5",
-          vitaminaB6: "Vitamina B6",
-          vitaminaB9: "Vitamina B9",
-          vitaminaB12: "Vitamina B12",
-          vitaminaA: "Vitamina A",
-          vitaminaD: "Vitamina D",
-          vitaminaE: "Vitamina E",
-          vitaminaK: "Vitamina K",
-        };
+				const nomes = {
+					vitaminaC: "Vitamina C",
+					vitaminaB1: "Vitamina B1",
+					vitaminaB2: "Vitamina B2",
+					vitaminaB3: "Vitamina B3",
+					vitaminaB5: "Vitamina B5",
+					vitaminaB6: "Vitamina B6",
+					vitaminaB9: "Vitamina B9",
+					vitaminaB12: "Vitamina B12",
+					vitaminaA: "Vitamina A",
+					vitaminaD: "Vitamina D",
+					vitaminaE: "Vitamina E",
+					vitaminaK: "Vitamina K",
+				};
 
-        Object.entries(resultados).forEach(([vitamina, status]) => {
-          const row = `<tr>
+				Object.entries(resultados).forEach(([vitamina, status]) => {
+					const row = `<tr>
                     <td>${nomes[vitamina]}</td>
-                    <td class="table-${
-                      status === "IDEAL" ? "success" : "danger"
-                    }">${status}</td>
+                    <td class="table-${status === "IDEAL" ? "success" : "danger"}">${status}</td>
                 </tr>`;
-          tbody.innerHTML += row;
-        });
+					tbody.innerHTML += row;
+				});
 
-        document.getElementById("resultados").style.display = "block";
-      }
-    </script>
-  </body>
+				document.getElementById("resultados").style.display = "block";
+			}
+		</script>
+	</body>
 </html>

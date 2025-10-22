@@ -1,13 +1,13 @@
 export declare enum LoggerType {
 	WARNING = "WARNING",
 	ERROR = "ERROR",
-	INFO = "INFO"
+	INFO = "INFO",
 }
 export declare enum Icon {
 	WARNING = "WARNING",
 	ERROR = "ERROR",
 	INFO = "INFO",
-	QUESTION = "QUESTION"
+	QUESTION = "QUESTION",
 }
 export declare enum MessageBoxChoice {
 	OK = "OK",
@@ -15,32 +15,32 @@ export declare enum MessageBoxChoice {
 	YES_NO = "YES_NO",
 	YES_NO_CANCEL = "YES_NO_CANCEL",
 	RETRY_CANCEL = "RETRY_CANCEL",
-	ABORT_RETRY_IGNORE = "ABORT_RETRY_IGNORE"
+	ABORT_RETRY_IGNORE = "ABORT_RETRY_IGNORE",
 }
 export declare enum ClipboardFormat {
 	unknown = "unknown",
 	text = "text",
-	image = "image"
+	image = "image",
 }
 export declare enum Mode {
 	window = "window",
 	browser = "browser",
 	cloud = "cloud",
-	chrome = "chrome"
+	chrome = "chrome",
 }
 export declare enum OperatingSystem {
 	Linux = "Linux",
 	Windows = "Windows",
 	Darwin = "Darwin",
 	FreeBSD = "FreeBSD",
-	Unknown = "Unknown"
+	Unknown = "Unknown",
 }
 export declare enum Architecture {
 	x64 = "x64",
 	arm = "arm",
 	itanium = "itanium",
 	ia32 = "ia32",
-	unknown = "unknown"
+	unknown = "unknown",
 }
 export interface DirectoryEntry {
 	entry: string;
@@ -177,7 +177,18 @@ export interface TrayMenuItem {
 	isDisabled?: boolean;
 	isChecked?: boolean;
 }
-export type KnownPath = "config" | "data" | "cache" | "documents" | "pictures" | "music" | "video" | "downloads" | "savedGames1" | "savedGames2" | "temp";
+export type KnownPath =
+	| "config"
+	| "data"
+	| "cache"
+	| "documents"
+	| "pictures"
+	| "music"
+	| "video"
+	| "downloads"
+	| "savedGames1"
+	| "savedGames2"
+	| "temp";
 declare function execCommand(command: string, options?: ExecCommandOptions): Promise<ExecCommandResult>;
 declare function spawnProcess(command: string, options?: SpawnedProcessOptions): Promise<SpawnedProcess>;
 declare function updateSpawnedProcess(id: number, event: string, data?: any): Promise<void>;
@@ -188,7 +199,12 @@ declare function showOpenDialog(title?: string, options?: OpenDialogOptions): Pr
 declare function showFolderDialog(title?: string, options?: FolderDialogOptions): Promise<string>;
 declare function showSaveDialog(title?: string, options?: SaveDialogOptions): Promise<string>;
 declare function showNotification(title: string, content: string, icon?: Icon): Promise<void>;
-declare function showMessageBox(title: string, content: string, choice?: MessageBoxChoice, icon?: Icon): Promise<string>;
+declare function showMessageBox(
+	title: string,
+	content: string,
+	choice?: MessageBoxChoice,
+	icon?: Icon
+): Promise<string>;
 declare function setTray(options: TrayOptions): Promise<void>;
 declare function open$1(url: string): Promise<void>;
 declare function getPath(name: KnownPath): Promise<string>;
@@ -291,8 +307,7 @@ export interface WindowPosOptions {
 	x: number;
 	y: number;
 }
-export interface WindowMenu extends Array<WindowMenuItem> {
-}
+export interface WindowMenu extends Array<WindowMenuItem> {}
 export interface WindowMenuItem {
 	id?: string;
 	text: string;
@@ -319,9 +334,12 @@ declare function setIcon(icon: string): Promise<void>;
 declare function move$1(x: number, y: number): Promise<void>;
 declare function center(): Promise<void>;
 declare function beginDrag(screenX?: number, screenY?: number): Promise<void>;
-declare function setDraggableRegion(DOMElementOrId: string | HTMLElement, options?: {
-	exclude?: Array<string | HTMLElement>;
-}): Promise<{
+declare function setDraggableRegion(
+	DOMElementOrId: string | HTMLElement,
+	options?: {
+		exclude?: Array<string | HTMLElement>;
+	}
+): Promise<{
 	success: true;
 	message: string;
 	exclusions: {
@@ -346,7 +364,19 @@ interface Response$1 {
 	success: boolean;
 	message: string;
 }
-export type Builtin = "ready" | "trayMenuItemClicked" | "windowClose" | "serverOffline" | "clientConnect" | "clientDisconnect" | "appClientConnect" | "appClientDisconnect" | "extClientConnect" | "extClientDisconnect" | "extensionReady" | "neuDev_reloadApp";
+export type Builtin =
+	| "ready"
+	| "trayMenuItemClicked"
+	| "windowClose"
+	| "serverOffline"
+	| "clientConnect"
+	| "clientDisconnect"
+	| "appClientConnect"
+	| "appClientDisconnect"
+	| "extClientConnect"
+	| "extClientDisconnect"
+	| "extensionReady"
+	| "neuDev_reloadApp";
 declare function on(event: string, handler: (ev: CustomEvent) => void): Promise<Response$1>;
 declare function off(event: string, handler: (ev: CustomEvent) => void): Promise<Response$1>;
 declare function dispatch(event: string, data?: any): Promise<Response$1>;
@@ -405,7 +435,30 @@ export interface InitOptions {
 	exportCustomMethods?: boolean;
 }
 export declare function init(options?: InitOptions): void;
-export type ErrorCode = "NE_FS_DIRCRER" | "NE_FS_RMDIRER" | "NE_FS_FILRDER" | "NE_FS_FILWRER" | "NE_FS_FILRMER" | "NE_FS_NOPATHE" | "NE_FS_COPYFER" | "NE_FS_MOVEFER" | "NE_OS_INVMSGA" | "NE_OS_INVKNPT" | "NE_ST_INVSTKY" | "NE_ST_STKEYWE" | "NE_RT_INVTOKN" | "NE_RT_NATPRME" | "NE_RT_APIPRME" | "NE_RT_NATRTER" | "NE_RT_NATNTIM" | "NE_CL_NSEROFF" | "NE_EX_EXTNOTC" | "NE_UP_CUPDMER" | "NE_UP_CUPDERR" | "NE_UP_UPDNOUF" | "NE_UP_UPDINER";
+export type ErrorCode =
+	| "NE_FS_DIRCRER"
+	| "NE_FS_RMDIRER"
+	| "NE_FS_FILRDER"
+	| "NE_FS_FILWRER"
+	| "NE_FS_FILRMER"
+	| "NE_FS_NOPATHE"
+	| "NE_FS_COPYFER"
+	| "NE_FS_MOVEFER"
+	| "NE_OS_INVMSGA"
+	| "NE_OS_INVKNPT"
+	| "NE_ST_INVSTKY"
+	| "NE_ST_STKEYWE"
+	| "NE_RT_INVTOKN"
+	| "NE_RT_NATPRME"
+	| "NE_RT_APIPRME"
+	| "NE_RT_NATRTER"
+	| "NE_RT_NATNTIM"
+	| "NE_CL_NSEROFF"
+	| "NE_EX_EXTNOTC"
+	| "NE_UP_CUPDMER"
+	| "NE_UP_CUPDERR"
+	| "NE_UP_UPDNOUF"
+	| "NE_UP_UPDINER";
 interface Error$1 {
 	code: ErrorCode;
 	message: string;
@@ -452,19 +505,61 @@ declare global {
 		NL_CCOMMIT: string;
 		/** An array of custom methods */
 		NL_CMETHODS: string[];
+		/** Neutralino global object for custom methods **/
+		Neutralino: any;
 	}
-	/** Neutralino global object for custom methods **/
-	const Neutralino: any;
 }
 
 declare namespace custom {
 	export { getMethods };
 }
 declare namespace filesystem {
-	export { appendBinaryFile, appendFile, copy, createDirectory, createWatcher, getAbsolutePath, getJoinedPath, getNormalizedPath, getOpenedFileInfo, getPathParts, getPermissions, getRelativePath, getStats, getUnnormalizedPath, getWatchers, move, openFile, readBinaryFile, readDirectory, readFile, remove, removeWatcher, setPermissions, updateOpenedFile, writeBinaryFile, writeFile };
+	export {
+		appendBinaryFile,
+		appendFile,
+		copy,
+		createDirectory,
+		createWatcher,
+		getAbsolutePath,
+		getJoinedPath,
+		getNormalizedPath,
+		getOpenedFileInfo,
+		getPathParts,
+		getPermissions,
+		getRelativePath,
+		getStats,
+		getUnnormalizedPath,
+		getWatchers,
+		move,
+		openFile,
+		readBinaryFile,
+		readDirectory,
+		readFile,
+		remove,
+		removeWatcher,
+		setPermissions,
+		updateOpenedFile,
+		writeBinaryFile,
+		writeFile,
+	};
 }
 declare namespace os {
-	export { execCommand, getEnv, getEnvs, getPath, getSpawnedProcesses, open$1 as open, setTray, showFolderDialog, showMessageBox, showNotification, showOpenDialog, showSaveDialog, spawnProcess, updateSpawnedProcess };
+	export {
+		execCommand,
+		getEnv,
+		getEnvs,
+		getPath,
+		getSpawnedProcesses,
+		open$1 as open,
+		setTray,
+		showFolderDialog,
+		showMessageBox,
+		showNotification,
+		showOpenDialog,
+		showSaveDialog,
+		spawnProcess,
+		updateSpawnedProcess,
+	};
 }
 declare namespace computer {
 	export { getArch, getCPUInfo, getDisplays, getKernelInfo, getMemoryInfo, getMousePosition, getOSInfo };
@@ -476,10 +571,49 @@ declare namespace debug {
 	export { log };
 }
 declare namespace app {
-	export { broadcast, exit, getConfig, killProcess, readProcessInput, restartProcess, writeProcessError, writeProcessOutput };
+	export {
+		broadcast,
+		exit,
+		getConfig,
+		killProcess,
+		readProcessInput,
+		restartProcess,
+		writeProcessError,
+		writeProcessOutput,
+	};
 }
 declare namespace window$1 {
-	export { beginDrag, center, create, exitFullScreen, focus$1 as focus, getPosition, getSize, getTitle, hide, isFullScreen, isMaximized, isMinimized, isVisible, maximize, minimize, move$1 as move, print$1 as print, setAlwaysOnTop, setDraggableRegion, setFullScreen, setIcon, setMainMenu, setSize, setTitle, show, snapshot, unmaximize, unminimize, unsetDraggableRegion };
+	export {
+		beginDrag,
+		center,
+		create,
+		exitFullScreen,
+		focus$1 as focus,
+		getPosition,
+		getSize,
+		getTitle,
+		hide,
+		isFullScreen,
+		isMaximized,
+		isMinimized,
+		isVisible,
+		maximize,
+		minimize,
+		move$1 as move,
+		print$1 as print,
+		setAlwaysOnTop,
+		setDraggableRegion,
+		setFullScreen,
+		setIcon,
+		setMainMenu,
+		setSize,
+		setTitle,
+		show,
+		snapshot,
+		unmaximize,
+		unminimize,
+		unsetDraggableRegion,
+	};
 }
 declare namespace events {
 	export { broadcast$1 as broadcast, dispatch, off, on };
@@ -494,7 +628,14 @@ declare namespace clipboard {
 	export { clear, getFormat, readHTML, readImage, readText, writeHTML, writeImage, writeText };
 }
 declare namespace resources {
-	export { extractDirectory, extractFile, getFiles, getStats$2 as getStats, readBinaryFile$1 as readBinaryFile, readFile$1 as readFile };
+	export {
+		extractDirectory,
+		extractFile,
+		getFiles,
+		getStats$2 as getStats,
+		readBinaryFile$1 as readBinaryFile,
+		readFile$1 as readFile,
+	};
 }
 declare namespace server {
 	export { getMounts, mount, unmount };

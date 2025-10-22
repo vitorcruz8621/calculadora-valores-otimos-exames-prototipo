@@ -1,216 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mineralograma - Valores Ótimos</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../configs/styles/global.css" />
-  </head>
-  <body class="bg-light">
-    <div class="menu">
-      <a href="../../index.html" class="btn btn-secondary mb-4"
-        >Voltar à Página Principal</a
-      >
-    </div>
-    <div class="container py-4">
-      <h2 class="text-center mb-4">Análise de Minerais e Metais</h2>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mineralograma - Valores Ótimos</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../configs/styles/global.css" />
+	</head>
+	<body class="bg-light">
+		<div class="menu">
+			<a href="../../index.html" class="btn btn-secondary mb-4">Voltar à Página Principal</a>
+		</div>
+		<div class="container py-4">
+			<h2 class="text-center mb-4">Análise de Minerais e Metais</h2>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <div class="card-header">Inserir Valores</div>
-            <div class="card-body">
-              <form id="mineralogramaForm">
-                <h5 class="mb-3">Minerais Essenciais</h5>
-                <div class="mb-3">
-                  <label class="form-label">Cálcio Total (9-10.5 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="calcioTotal"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label"
-                    >Cálcio Iônico (4.6-5.3 mg/dL)</label
-                  >
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="calcioIonico"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Zinco (90-120 µg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="zinco"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Magnésio (2.0-2.5 mg/dL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="magnesio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Selênio (70-120 ng/mL)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="selenio"
-                  />
-                </div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card mb-4">
+						<div class="card-header">Inserir Valores</div>
+						<div class="card-body">
+							<form id="mineralogramaForm">
+								<h5 class="mb-3">Minerais Essenciais</h5>
+								<div class="mb-3">
+									<label class="form-label">Cálcio Total (9-10.5 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="calcioTotal" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Cálcio Iônico (4.6-5.3 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="calcioIonico" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Zinco (90-120 µg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="zinco" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Magnésio (2.0-2.5 mg/dL)</label>
+									<input type="number" step="0.1" class="form-control" name="magnesio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Selênio (70-120 ng/mL)</label>
+									<input type="number" step="0.1" class="form-control" name="selenio" />
+								</div>
 
-                <h5 class="mb-3 mt-4">Metais Tóxicos</h5>
-                <div class="mb-3">
-                  <label class="form-label">Alumínio (µg/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="aluminio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Arsênio (µg/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="arsenio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Cádmio (µg/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="cadmio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Chumbo (µg/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="chumbo"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Mercúrio (µg/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="mercurio"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Níquel (µg/L)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    class="form-control"
-                    name="niquel"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">Analisar</button>
-              </form>
-            </div>
-          </div>
+								<h5 class="mb-3 mt-4">Metais Tóxicos</h5>
+								<div class="mb-3">
+									<label class="form-label">Alumínio (µg/L)</label>
+									<input type="number" step="0.1" class="form-control" name="aluminio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Arsênio (µg/L)</label>
+									<input type="number" step="0.1" class="form-control" name="arsenio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Cádmio (µg/L)</label>
+									<input type="number" step="0.1" class="form-control" name="cadmio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Chumbo (µg/L)</label>
+									<input type="number" step="0.1" class="form-control" name="chumbo" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Mercúrio (µg/L)</label>
+									<input type="number" step="0.1" class="form-control" name="mercurio" />
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Níquel (µg/L)</label>
+									<input type="number" step="0.1" class="form-control" name="niquel" />
+								</div>
+								<button type="submit" class="btn btn-primary">Analisar</button>
+							</form>
+						</div>
+					</div>
 
-          <div class="card">
-            <div class="card-header">Informações Importantes</div>
-            <div class="card-body">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Minerais essenciais são necessários para funções vitais
-                </li>
-                <li class="list-group-item">
-                  Metais tóxicos devem estar ausentes ou indetectáveis
-                </li>
-                <li class="list-group-item">
-                  Valores de metais tóxicos > 0 são considerados alterados
-                </li>
-                <li class="list-group-item">
-                  O cálcio iônico é a forma biologicamente ativa
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Informações Importantes</div>
+						<div class="card-body">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Minerais essenciais são necessários para funções vitais</li>
+								<li class="list-group-item">Metais tóxicos devem estar ausentes ou indetectáveis</li>
+								<li class="list-group-item">
+									Valores de metais tóxicos > 0 são considerados alterados
+								</li>
+								<li class="list-group-item">O cálcio iônico é a forma biologicamente ativa</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">Resultados</div>
-            <div class="card-body" id="resultados">
-              <!-- Resultados serão inseridos aqui -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">Resultados</div>
+						<div class="card-body" id="resultados">
+							<!-- Resultados serão inseridos aqui -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script src="./mineralograma-utils.js"></script>
-    <script>
-      document
-        .getElementById("mineralogramaForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+		<script src="./mineralograma-utils.js"></script>
+		<script>
+			document.getElementById("mineralogramaForm").addEventListener("submit", function (e) {
+				e.preventDefault();
 
-          const formData = new FormData(this);
-          const dados = {};
+				const formData = new FormData(this);
+				const dados = {};
 
-          for (let [key, value] of formData.entries()) {
-            if (value !== "") {
-              dados[key] = parseFloat(value);
-            }
-          }
+				for (let [key, value] of formData.entries()) {
+					if (value !== "") {
+						dados[key] = parseFloat(value);
+					}
+				}
 
-          const resultados = MineralogramaUtils.avaliarMineraisMetais(dados);
-          const resultsDiv = document.getElementById("resultados");
-          resultsDiv.innerHTML = "";
+				const resultados = MineralogramaUtils.avaliarMineraisMetais(dados);
+				const resultsDiv = document.getElementById("resultados");
+				resultsDiv.innerHTML = "";
 
-          for (let param in resultados) {
-            const valor = dados[param];
-            const referencia = MineralogramaUtils.referencia[param];
-            const isToxic = MineralogramaUtils.metaisToxicos.includes(param);
+				for (let param in resultados) {
+					const valor = dados[param];
+					const referencia = MineralogramaUtils.referencia[param];
+					const isToxic = MineralogramaUtils.metaisToxicos.includes(param);
 
-            resultsDiv.innerHTML += `
+					resultsDiv.innerHTML += `
               <div class="result-box ${resultados[param]}">
                 <strong>${param}:</strong> ${valor} 
                 ${
-                  !isToxic
-                    ? `
+					!isToxic
+						? `
                   <span class="badge bg-secondary">
                     Referência: ${referencia.min} - ${referencia.max}
                   </span>
                 `
-                    : ""
-                }
+						: ""
+				}
                 <span class="badge bg-info text-dark">
                   Status: ${resultados[param]}
                 </span>
               </div>
             `;
-          }
-        });
-    </script>
-    <script src="../../neutralino.js"></script>
-  </body>
+				}
+			});
+		</script>
+		<script src="../../neutralino.js"></script>
+	</body>
 </html>
